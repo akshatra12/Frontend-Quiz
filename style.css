@@ -1,0 +1,128 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1c1c1c;
+  --secondary-color: #555;
+  --btn-bg: #f0f0f0;
+  --btn-hover: #e0e0e0;
+}
+
+body.dark {
+  --bg-color: #1c2331;
+  --text-color: #ffffff;
+  --secondary-color: #aaa;
+  --btn-bg: #2c3e50;
+  --btn-hover: #34495e;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  display: flex;
+  gap: 100px;
+}
+
+.left-panel h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.left-panel h1 span {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.left-panel p {
+  color: var(--secondary-color);
+  margin-top: 10px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px; width: 14px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #6c5ce7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.quiz-btn {
+  background-color: var(--btn-bg);
+  border: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: var(--text-color);
+  font-size: 1rem;
+  text-align: left;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.quiz-btn:hover {
+  background-color: var(--btn-hover);
+}
